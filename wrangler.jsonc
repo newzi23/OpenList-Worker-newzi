@@ -23,7 +23,9 @@
 // 用户填入的值会成为该 Worker 的 Secret，后续更新不会被覆盖。
 // =============================================================================
 {
-  "name": "openlist-tsworkers",
+  // 必须与 Cloudflare 上实际存在的 Worker 同名，否则 wrangler deploy 会另建一个
+  // 新 Worker，而自定义域名仍指向旧的（2026-11-04 修正：上一版 PR 声称改了但漏改）。
+  "name": "openlist-worker-newzi",
   "main": "src/backend/worker.ts",
   "compatibility_date": "2026-08-04",
   "compatibility_flags": ["nodejs_compat"],
