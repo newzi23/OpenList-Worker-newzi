@@ -23,6 +23,8 @@
   "compatibility_flags": ["nodejs_compat"],
   "workers_dev": false,
   "preview_urls": false,
+  // 上游默认 true：控制台里配的明文变量在部署时保留（我们所有变量都在本文件里，
+  // 所以这个开关对我们的影响只是"历史遗留变量不会被自动清掉"）
   "keep_vars": true,
   // ── 可观测性（2026-11-11 加）：免费版含 20 万日志事件/日、保留 3 天 ──
   // 之前线上 observability 是 None，出错只能看到 5xx 结果、看不到堆栈。
