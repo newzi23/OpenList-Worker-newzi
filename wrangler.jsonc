@@ -24,6 +24,15 @@
   "workers_dev": false,
   "preview_urls": false,
   "keep_vars": true,
+  // ── 可观测性（2026-11-11 加）：免费版含 20 万日志事件/日、保留 3 天 ──
+  // 之前线上 observability 是 None，出错只能看到 5xx 结果、看不到堆栈。
+  "observability": { "enabled": true },
+
+  // ── Smart Placement（2026-11-11 加）：把执行位置挪到离上游（三个国内网盘）更近的机房 ──
+  // 实测本 Worker 默认在 LAX 执行，而网盘 origin 在国内，列目录/换直链要跨太平洋往返。
+  // 官方文档：所有 plan（含免费）可用；需约 15 分钟学习流量后才生效。
+  "placement": { "mode": "smart" },
+
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
